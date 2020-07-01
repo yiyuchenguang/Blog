@@ -1,0 +1,78 @@
+{%extends 'base_foot.html'%}
+{%block head%}
+
+{%endblock head%}
+{%block body%}
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+  <a class="navbar-brand" href="#">Monkey</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+<!--       <li class="nav-item">
+        <a class="nav-link" href="#">Link</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+      </li> -->
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Tools</a>
+        <div class="dropdown-menu" aria-labelledby="dropdown01">
+          <a class="dropdown-item" href="/monkey/capl_des" >door to capl</a>
+          <a class="dropdown-item" href="/monkey/html_to_doors">html steps to doors</a>
+          <a class="dropdown-item" href="#">tool3</a>
+        </div>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
+
+<main role="main">
+
+  <!-- Main jumbotron for a primary marketing message or call to action -->
+  <div class="jumbotron">
+    <div class="container">
+      <h1 class="display-3">Hello!</h1>
+      <p>This is a small web created by carl wu, I will develop some good tools in my daily work</p>
+      <P>it may can help engineer solve some problem Quickly and efficiently.</P>
+      <!-- <p><a class="btn btn-primary btn-lg" href="https://getbootstrap.net/example/jumbotron/#" role="button">Learn more »</a></p> -->
+    </div>
+  </div>
+
+  <div class="container">
+    <!-- Example row of columns -->
+    <div class="row">
+      <div class="col-md-4">
+        <h2>door to capl</h2>
+        <p>this tool can transform test specfication of doors to test purpose of capl. </p>
+        <p><a class="btn btn-secondary" href="/monkey/capl_des" role="button">open... »</a></p>
+      </div>
+      <div class="col-md-4">
+        <h2>html steps to doors</h2>
+        <p>this tool can transform test steps of html report to test specfication of doors ,when your capl script test steps have maked some update,you have to update your doors test specfication,as we know ,it's very slowly and inefficient when editing doors, so this tools could help us solve this problem. </p>
+        <p><a class="btn btn-secondary" href="/monkey/html_to_doors" role="button">open... »</a></p>
+      </div>
+      <div class="col-md-4">
+        <h2>......</h2>
+        <p>be coming soon.</p>
+        <p><a class="btn btn-secondary disabled" href="#" role="button">open... »</a></p>
+      </div>
+    </div>
+
+    <hr>
+
+  </div> <!-- /container -->
+
+</main>
+
+
+{%endblock body%}

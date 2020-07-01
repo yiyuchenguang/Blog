@@ -1,0 +1,21 @@
+{%extends 'base_foot.html'%}
+{%block head%}
+
+{%endblock head%}
+{%block body%}
+<form action="/monkey/capl_des_handle/" method="post">
+	{%csrf_token%}
+  <h3 class="text-center text-primary ">Doors Test Specification Transform To CAPL Purpose Steps</h3>
+	<br>
+  <div class="form-group">
+    <label for="exampleFormControlTextarea1">输入区：</label>
+    <textarea class="form-control capl_input border border-primary text-info" name="input" id="exampleFormControlTextarea1 " rows="10">{{text_intput}}</textarea>
+  </div>
+  <button type="submit" class="btn btn-primary btn-sm btn-block">转换</button>
+  <div class="form-group">
+	<label for="exampleFormControlTextarea2">输出区：</label>
+	<p class="card-text capl_output border border-primary" name="output"  style="height:200px;" >{{text_output}}</p>
+  </div>
+
+</form>
+{%endblock body%}

@@ -1,0 +1,44 @@
+{%extends 'base_foot.html'%}
+{%block head%}
+
+{%endblock head%}
+
+{%block body%}
+	<form action="/monkey/html_to_doors_handle/" method="post" enctype="multipart/form-data">
+		{%csrf_token%}
+		<h3 class="text-center text-primary ">HTML Report test steps Transform To Doors Specification</h3>
+	    <br>
+	    <div class="custom-file">
+			<input type="file" class="custom-file-input" id="validatedCustomFile" name="file" οnchange="loadFile(this.files[0])" >
+			<label class="custom-file-label" for="validatedCustomFile" id="filePos">Choose file...</label>
+
+  	    </div>
+		<div><br></div>
+		<button type="submit" class="btn btn-primary btn-sm btn-block">转换</button>
+		<div><br></div>
+		<div class="form-row">
+			<div class="form-group col-md-6">
+			  <label for="exampleFormControlTextarea1">Doors Specification</label>
+			  <textarea class="form-control  border border-primary " name="input" id="exampleFormControlTextarea1" readonly="readonly" rows="18">{{text_intput}}</textarea>
+			</div>
+			<div class="form-group col-md-6">
+			  <label for="exampleFormControlTextarea2">CAPL Description</label>
+			  <textarea class="form-control  border border-primary " name="output" id="exampleFormControlTextarea2" readonly="readonly" rows="18">{{text_output}}</textarea>
+			</div>
+		</div>
+	</form>
+    <!--显示文件名-->
+	<script>
+		$("input[type=file]").change(function () {
+			var fieldVal = $(this).val();
+
+			// Change the node's value by removing the fake path (Chrome)
+			fieldVal = fieldVal.replace("C:\\fakepath\\", "");
+
+			if (fieldVal != undefined || fieldVal != "") {
+				$(this).next(".custom-file-label").attr('data-content', fieldVal);
+				$(this).next(".custom-file-label").text(fieldVal);
+			}
+		});
+	</script>
+{%endblock body%}
